@@ -1,0 +1,152 @@
+ body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(196, 179, 230);
+  height: 100vh;
+  margin: 0;
+ 
+}
+ #rectangle{
+  height: 70%;
+  width: 100%;
+  background-color: #f0ffff;
+  border: 1px solid #010609; 
+ position: absolute;
+  bottom: -41px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}  
+
+#triangle{
+  
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid #dec4db;
+    position: absolute; 
+   bottom:0%;
+  left:0;
+  
+  transform:rotate(180deg);   
+  transition: transform 0.3s ease;
+  /* transform-origin: bottom center; */
+  /* transform: rotate(180deg); */
+  
+  
+  
+}
+#triangle.open {
+  /* transition:  ease-in-out ; */
+  /* bottom: 0;  */
+  -webkit-box-reflect: below; 
+  
+}
+.canvas {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  
+}
+
+
+#card {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #f0ffff;
+  z-index: 1001; /* Ensure it appears on top */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-family: cursive;
+}
+#card.show {
+  opacity: 1;
+}
+
+#popper{
+  position: fixed; /* Full-screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 1000; 
+}
+
+#popper div {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #33ff4b, #4066ff);
+  opacity: 0;
+}
+.animate-popper div {
+  animation: popper 0.5s forwards;
+}
+
+.hidden{
+  display: none;
+}
+
+ @keyframes mymove{
+  from {left: 0px;}
+  to {top: 300px;}
+ }
+ @keyframes popper{
+  0%{
+    transform:scale(0);
+    opacity: 4;
+  }
+  100%{
+    transform:  translateY(-100vh) scale(1);
+    opacity: 4;
+  }
+ }
+.fade-in{
+  
+}
+
+ /*
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f5;
+  margin: 0;
+}
+
+#envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  
+}
+
+#envelope-body {
+  width: 100%;
+  height: 70%;
+  background-color: #f8fcfc;                 
+  border: 2px solid #010609;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  
+}
+
+#envelope-flap {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #ec0707;
+  
+  position: absolute;
+  
+  bottom:-0%;
+  left: 0;
+  transform:  rotate(180deg); 
+} */
